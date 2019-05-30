@@ -1,0 +1,31 @@
+﻿<Window x:Class="WPF_FlatButton.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_FlatButton"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="Flat">
+            <Setter Property="Control.Background" Value="{x:Null}" />
+            <Setter Property="Control.BorderBrush" Value="{x:Null}" />
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="True">
+                    <Setter Property="Control.Background" Value="{x:Null}" />
+                    <Setter Property="Control.BorderBrush" Value="{x:Null}" />
+                    <Setter Property="Control.FontWeight" Value="Bold" />
+                </Trigger>
+                <Trigger Property="Control.IsFocused" Value="True">
+                    <Setter Property="Control.FontWeight" Value="Bold" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Button 
+            Style="{StaticResource Flat}"
+            Content="Button" HorizontalAlignment="Left" Margin="89,141,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

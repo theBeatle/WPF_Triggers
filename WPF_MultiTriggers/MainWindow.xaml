@@ -1,0 +1,40 @@
+﻿<Window x:Class="WPF_MultiTriggers.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_MultiTriggers"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle">
+            <Style.Triggers>
+                <MultiTrigger>
+
+                    <MultiTrigger.Conditions>
+                        <Condition Property="Control.IsFocused" Value="True"></Condition>
+                        <Condition Property="Control.IsMouseOver" Value="True"></Condition>
+                    </MultiTrigger.Conditions>
+                    
+                    <MultiTrigger.Setters>
+                        <Setter Property="Control.Foreground" Value="DarkBlue"></Setter>
+                        <Setter Property="Control.FontSize" Value="20"></Setter>
+                    </MultiTrigger.Setters>
+
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+        <Button Name="Button1"
+                Style="{StaticResource MyButtonStyle}"
+                Margin="20"
+                Content="MyButton" />
+        <Button Name="Button2"
+                Style="{StaticResource MyButtonStyle}"
+                Margin="20"
+                Content="MyButton" />
+    </StackPanel>
+</Window>
+
